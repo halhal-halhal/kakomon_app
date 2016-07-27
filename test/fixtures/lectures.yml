@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  teacher_id: 1
+  year: 1
+  gakubu: 1
+  gakka: 1
+  term: 1
+  type: 1
+
+two:
+  name: MyString
+  teacher_id: 1
+  year: 1
+  gakubu: 1
+  gakka: 1
+  term: 1
+  type: 1

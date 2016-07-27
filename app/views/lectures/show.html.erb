@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lecture.name %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @lecture.teacher_id %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @lecture.year %>
+</p>
+
+<p>
+  <strong>Gakubu:</strong>
+  <%= @lecture.gakubu %>
+</p>
+
+<p>
+  <strong>Gakka:</strong>
+  <%= @lecture.gakka %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @lecture.term %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @lecture.type %>
+</p>
+
+<%= link_to 'Edit', edit_lecture_path(@lecture) %> |
+<%= link_to 'Back', lectures_path %>

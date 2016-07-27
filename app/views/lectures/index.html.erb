@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lectures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Teacher</th>
+      <th>Year</th>
+      <th>Gakubu</th>
+      <th>Gakka</th>
+      <th>Term</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lectures.each do |lecture| %>
+      <tr>
+        <td><%= lecture.name %></td>
+        <td><%= lecture.teacher_id %></td>
+        <td><%= lecture.year %></td>
+        <td><%= lecture.gakubu %></td>
+        <td><%= lecture.gakka %></td>
+        <td><%= lecture.term %></td>
+        <td><%= lecture.type %></td>
+        <td><%= link_to 'Show', lecture %></td>
+        <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
+        <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lecture', new_lecture_path %>
