@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :mail
       t.integer :year
-      t.integet :gakubu
+      t.integer :gakubu
       t.integer :gakka
 
       t.timestamps null: false
