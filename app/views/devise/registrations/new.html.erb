@@ -4,12 +4,12 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :メールアドレス(埼玉大学のもの限定) %><br />
+    <%= f.label :"メールアドレス(埼玉大学のもの限定)" %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :パスワード %>
+    <%= f.label :"パスワード" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
     <% end %><br />
@@ -17,7 +17,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :パスワード確認用 %><br />
+    <%= f.label :"パスワード確認用"%><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
