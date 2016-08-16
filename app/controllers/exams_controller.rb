@@ -69,6 +69,6 @@ class ExamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exam_params
-      params.require(:exam).permit(:lecture_id, :user_id, :year, :season)
+      params.require(:exam).permit(:lecture_id, :user_id, :year, :season, :image, :image_cache, :remove_image)
     end
 end

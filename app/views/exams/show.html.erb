@@ -9,6 +9,16 @@
   <strong>User:</strong>
   <%= @exam.user_id %>
 </p>
+<!-- 追加箇所 開始 -->
+<p>
+  <strong>Image:</strong>
+  <% if @exam.image? %>
+    <div class="thumbnail">
+      <%= image_tag @exam.image.url %>
+    </div>
+  <% end %>
+</p>
+<!-- 追加箇所 終了 -->
 
 <p>
   <strong>Year:</strong>
@@ -19,6 +29,7 @@
   <strong>Season:</strong>
   <%= @exam.season %>
 </p>
+
 
 <%= link_to 'Edit', edit_exam_path(@exam) %> |
 <%= link_to 'Back', exams_path %>
