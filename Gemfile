@@ -9,6 +9,7 @@ gem 'sqlite3'
 
 gem 'devise'
 gem 'carrierwave'
+gem 'cocoon'
 
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
