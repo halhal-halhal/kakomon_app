@@ -4,7 +4,19 @@ class LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
   def index
-    @lectures = Lecture.all
+    @search_form = LectureSearchForm.new(params[:search])
+    @lectures = @search_form.search
+    @lectures = Lecture.all if @lectures == Lecture
+  end
+
+  class LectureSearchForm
+    include ActiveModel::Model
+    attr_accessor :lecture_name
+    def search
+      rel = Lecture
+      rel = rel.where("name like '%" +lecture_name+ "%'") if lecture_name.present?
+      rel
+    end
   end
 
   # GET /lectures/1
@@ -69,6 +81,6 @@ class LecturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params
-      params.require(:lecture).permit(:name, :teacher_id, :year, :gakubu, :gakka, :term, :type)
+      params.require(:lecture).permit(:name, :teacher_id, :year, :gakubu, :gakka, :term, :lec_type)
     end
 end

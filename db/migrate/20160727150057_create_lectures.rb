@@ -7,7 +7,7 @@ class CreateLectures < ActiveRecord::Migration
       t.integer :gakubu
       t.integer :gakka
       t.integer :term
-      t.integer :type
+      t.integer :lec_type
 
       t.timestamps null: false
     end

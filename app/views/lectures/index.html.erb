@@ -2,6 +2,14 @@
 
 <h1>Listing Lectures</h1>
 
+<!-- 検索フォームの追加 -->
+<%= form_for @search_form, as: 'search', url: :lectures, html: {method: :get} do |f| %>
+<%= f.label :lecture_name, "講義名" %>
+<%= f.text_field :lecture_name %><br>
+<%= f.submit "検索" %>
+<% end %>
+<!-- ここまで -->
+
 <table>
   <thead>
     <tr>
@@ -25,7 +33,7 @@
         <td><%= lecture.gakubu %></td>
         <td><%= lecture.gakka %></td>
         <td><%= lecture.term %></td>
-        <td><%= lecture.type %></td>
+        <td><%= lecture.lec_type %></td>
         <td><%= link_to 'Show', lecture %></td>
         <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
         <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>

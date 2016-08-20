@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160817123800) do
     t.integer  "gakubu"
     t.integer  "gakka"
     t.integer  "term"
-    t.integer  "type"
+    t.integer  "lec_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
