@@ -1,6 +1,6 @@
 class LecturesController < ApplicationController
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: :show
   # GET /lectures
   # GET /lectures.json
   def index

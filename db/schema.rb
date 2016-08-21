@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817123800) do
+ActiveRecord::Schema.define(version: 20160821132621) do
 
   create_table "exam_relations", force: :cascade do |t|
     t.integer  "exam_id"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20160817123800) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"
+  end
+
+  create_table "gakka_lists", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "gakubu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gakubu_lists", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lectures", force: :cascade do |t|
