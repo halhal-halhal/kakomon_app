@@ -1,18 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @lecture.name %>
-</p>
 
+<h1>講義情報</h1>
 <p>
-  <strong>Teacher:</strong>
-  <%= @lecture.teacher_id %>
+<strong>講義名:</strong>
+<%= @lecture.name %>
 </p>
-
 <p>
-  <strong>Year:</strong>
-  <%= @lecture.year %>
+  <strong>担当教員:</strong>
+  <%= link_to Teacher.find(@lecture.teacher_id).name, '/teachers/'+@lecture.teacher_id.to_s %>
 </p>
 
 <p>
@@ -34,6 +30,38 @@
   <strong>Type:</strong>
   <%= @lecture.lec_type %>
 </p>
+
+<hr>
+<h1>投稿された過去問</h1>
+<!-- exams/showへのリンク -->
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>投稿者</th>
+      <th>実施年度</th>
+      <th>区分</th>
+      <th>画像</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lecture.exams.each do |exam|  %>
+      <tr>
+        <td><%= exam.user_id %></td>
+        <td><%= exam.year %></td>
+        <td><%  if exam.season == 0 %>中間<%else%>期末<%end%> </td>
+        <td><%= link_to '閲覧', exam.image.url %></td>
+        <td><%= link_to 'Show', exam %></td>
+        <td><%= link_to 'Edit', edit_exam_path(exam) %></td>
+        <td><%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<!-- ここまで -->
 
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
 <%= link_to 'Back', lectures_path %>
