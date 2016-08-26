@@ -4,9 +4,11 @@ class LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
   def index
+    @teacher = Teacher.new
     @search_form = LectureSearchForm.new(params[:search])
     @lectures = @search_form.search
     @lectures = Lecture.all if @lectures == Lecture
+
   end
 
   class LectureSearchForm
@@ -83,4 +85,5 @@ class LecturesController < ApplicationController
     def lecture_params
       params.require(:lecture).permit(:name, :teacher_id, :year, :gakubu, :gakka, :term, :lec_type)
     end
+
 end
