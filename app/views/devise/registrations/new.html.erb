@@ -1,17 +1,14 @@
 <h2>ユーザ登録</h2>
 
-<%= form_for @user do |f| %>
 
-<div class="field">
-  <%= f.label :name %><br>
-  <%= f.text_field :name %>
-</div>
-
-
-<% end %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
 
   <div class="field">
     <%= f.label :"メールアドレス(埼玉大学のもの限定)" %><br />
