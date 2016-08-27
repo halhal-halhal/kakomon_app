@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 20160821132621) do
     t.integer  "gakka"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "password_digest"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
