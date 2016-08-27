@@ -7,8 +7,47 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- navbar　追加　 -->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
+    <div class="navbar-header">
+
+      <!--
+
+        メニューボタン
+
+        data-toggle : ボタンを押したときにNavbarを開かせるために必要
+        data-target : 複数navbarを作成する場合、ボタンとナビを紐づけるために必要
+
+      -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- タイトルなどのテキスト -->
+      <a class="navbar-brand" href="/">Designup.jp</a>
+
+    </div>
+
+    <!-- グローバルナビの中身 -->
+    <div class="collapse navbar-collapse" id="nav-menu-2">
+
+      <a class="navbar-text" href="/lectures">講義検索</a>
+      <a class="navbar-text" href="/teachers">教員検索</a>
+      <a class="navbar-text" href="#">Designup.jp</a>
+
+    </div>
+  </div>
+</nav>
+<!-- navbarここまで -->
 
 <%= yield %>
-
+<!-- フッター追加　　 -->
+<!-- フッターここまで -->
 </body>
 </html>

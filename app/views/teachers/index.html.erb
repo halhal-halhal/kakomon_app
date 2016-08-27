@@ -2,13 +2,21 @@
 
 <h1>Listing Teachers</h1>
 
-<table>
+<!-- 検索フォームの追加 -->
+<%= form_for @search_form, as: 'search', url: :teachers, html: {method: :get} do |f| %>
+<%= f.label :teacher_name, "教員名" %>
+<%= f.text_field :teacher_name %>
+<%= f.submit "検索" %>
+<% end %><br>
+<!-- ここまで -->
+
+
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Lecture</th>
-      <th>Gakubu</th>
-      <th>Gakka</th>
+      <th>教員名</th>
+      <th>所属学部</th>
+      <th>所属学科</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +24,9 @@
   <tbody>
     <% @teachers.each do |teacher| %>
       <tr>
-        <td><%= teacher.name %></td>
-        <td><%= teacher.lecture_id %></td>
-        <td><%= teacher.gakubu %></td>
-        <td><%= teacher.gakka %></td>
+        <td><%= link_to teacher.name, teacher %></td>
+        <td><%= GakubuList.find(teacher.gakubu).name %></td>
+        <td><%= GakkaList.find(teacher.gakka).name %></td>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
         <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -29,8 +29,8 @@
       <tr>
         <td><%= link_to lecture.name, lecture %></td>
         <td><%= link_to @teacher.name, @teacher %></td>
-        <td><%= lecture.gakubu %></td>
-        <td><%= lecture.gakka %></td>
+        <td><%= GakubuList.find(lecture.gakubu).name %></td>
+        <td><%= GakkaList.find(lecture.gakka).name %></td>
         <td>第<%= lecture.term %>ターム</td>
         <td><%  if lecture.lec_type == 1 %>必修<%else%>基盤<%end%></td>
         <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>

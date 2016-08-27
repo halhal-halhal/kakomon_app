@@ -4,7 +4,19 @@ class TeachersController < ApplicationController
   # GET /teachers
   # GET /teachers.json
   def index
-    @teachers = Teacher.all
+    @search_form = TeacherSearchForm.new(params[:search])
+    @teachers = @search_form.search
+    @teachers = Teacher.all if @teachers == Teacher
+  end
+
+  class TeacherSearchForm
+    include ActiveModel::Model
+    attr_accessor :teacher_name
+    def search
+      rel = Teacher
+      rel = rel.where("name like '%" +teacher_name+ "%'") if teacher_name.present?
+      rel
+    end
   end
 
   # GET /teachers/1

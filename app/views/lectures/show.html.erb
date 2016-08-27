@@ -13,22 +13,22 @@
 
 <p>
   <strong>Gakubu:</strong>
-  <%= @lecture.gakubu %>
+  <%= GakubuList.find(@lecture.gakubu).name %>
 </p>
 
 <p>
   <strong>Gakka:</strong>
-  <%= @lecture.gakka %>
+  <%= GakkaList.find(@lecture.gakka).name %>
 </p>
 
 <p>
   <strong>Term:</strong>
-  <%= @lecture.term %>
+  第<%= @lecture.term %>ターム
 </p>
 
 <p>
   <strong>Type:</strong>
-  <%= @lecture.lec_type %>
+  <%  if @lecture.lec_type == 1 %>必修<%else%>基盤<%end%>
 </p>
 
 <hr>
