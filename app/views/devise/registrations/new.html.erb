@@ -16,6 +16,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :gakubu %><br>
+    <%= f.text_field :gakubu %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gakka %><br>
+    <%= f.text_field :gakka %>
+  </div>
+
+  <div class="field">
     <%= f.label :"パスワード" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
