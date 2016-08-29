@@ -22,7 +22,11 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   # GET /teachers/1.json
   def show
+  #  @lectures = Lecture.all
+    @lectures = Lecture.where(teacher_id: @teacher)
+    @lectures = Lecture.all if @lectures == Lecture
   end
+
 
   # GET /teachers/new
   def new

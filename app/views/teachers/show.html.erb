@@ -27,7 +27,6 @@
     <tr>
       <th>講義名</th>
       <th>開講学部</th>
-      <th>学科</th>
       <th>施行ターム</th>
       <th>分類</th>
       <th colspan="3"></th>
@@ -35,11 +34,10 @@
   </thead>
 
   <tbody>
-    <% @teacher.lectures.each do |lecture| %>
+    <% @lectures.each do |lecture| %>
     <tr>
         <td><%= link_to lecture.name, lecture %></td>
         <td><%= GakubuList.find(lecture.gakubu).name %></td>
-        <td><<%= GakkaList.find(lecture.gakka).name %></td>
         <td>第<%= lecture.term %>ターム</td>
         <td><%  if lecture.lec_type == 1 %>必修<%else%>基盤<%end%></td>
         <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
