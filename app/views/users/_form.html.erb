@@ -22,6 +22,7 @@
   </div>
   <div class="field">
     <%= f.label :gakubu %><br>
+    <%= f.select :name, GakubuList.all.map{|b| [b.name, b.id]} %>
     <%= f.number_field :gakubu %>
   </div>
   <div class="field">

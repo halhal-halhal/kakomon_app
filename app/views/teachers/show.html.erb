@@ -38,7 +38,7 @@
     <tr>
         <td><%= link_to lecture.name, lecture %></td>
         <td><%= GakubuList.find(lecture.gakubu).name %></td>
-        <td>第<%= lecture.term %>ターム</td>
+        <td><%if lecture.term == 0%>その他<%else%>第<%= lecture.term %>ターム<%end%></td>
         <td><%  if lecture.lec_type == 1 %>必修<%else%>基盤<%end%></td>
         <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
         <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>

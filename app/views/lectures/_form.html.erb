@@ -32,8 +32,16 @@
     <%= f.number_field :gakka %>
   </div>
   <div class="field">
-    <%= f.label :term %><br>
-    <%= f.number_field :term %>
+    <div class="field">
+      <label for="term">開講ターム</label>(1,2ターム連続の場合は1ターム扱い)<br>
+      <select id="term" name="lecture[term]">
+        <option value="1" selected>第１ターム</option>
+        <option value="2">第２ターム</option>
+        <option value="3">第３ターム</option>
+        <option value="4">第４ターム</option>
+        <option value="0">その他</option>
+      </select>
+    </div>
   </div>
   <div class="field">
     <%= f.label :lec_type %><br>
