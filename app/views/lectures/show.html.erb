@@ -40,21 +40,23 @@
 <table class="table table-striped table-hover ">
   <thead>
     <tr>
+      <th>ファイル名</th>
       <th>投稿者</th>
       <th>実施年度</th>
       <th>区分</th>
-      <th>画像</th>
+  
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @lecture.exams.each do |exam|  %>
+    <% @exams.each do |exam|  %>
       <tr>
+        <td><%= link_to exam.name, exam.image.url %></td>
         <td><%if current_user%><%= link_to User.find(exam.user_id).name, user_path(exam.user_id) %><%else%><%=User.find(exam.user_id).name%><%end%></td>
         <td><%= exam.year %></td>
-        <td><%  if exam.season == 0 %>中間<%else%>期末<%end%> </td>
-        <td><%if current_user %><%= link_to '閲覧', exam.image.url %><%end%></td>
+        <td><%  if exam.season == 0 %>中間<%elsif exam.season == 1%>期末<%else%>その他<%end%> </td>
+
         <td><%= link_to 'Show', exam %></td>
         <td><%= link_to 'Edit', edit_exam_path(exam) %></td>
         <td><%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -62,7 +64,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= link_to 'New Exam', new_exam_path(@lecture) %>
 
 <!-- ここまで -->
 

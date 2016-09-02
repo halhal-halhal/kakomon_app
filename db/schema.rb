@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160828164955) do
+ActiveRecord::Schema.define(version: 20160902152315) do
 
   create_table "exam_relations", force: :cascade do |t|
     t.integer  "exam_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160828164955) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"
+    t.string   "name"
   end
 
   create_table "gakka_lists", force: :cascade do |t|
@@ -74,6 +75,15 @@ ActiveRecord::Schema.define(version: 20160828164955) do
     t.integer  "lecture_id"
     t.integer  "gakubu"
     t.integer  "gakka"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "tag"
+    t.text     "main_text"
+    t.text     "sub_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

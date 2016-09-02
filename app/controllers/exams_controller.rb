@@ -15,6 +15,8 @@ class ExamsController < ApplicationController
   # GET /exams/new
   def new
     @exam = Exam.new
+    @exam.lecture_id = params[:format]
+    @exam.user_id = current_user.id
   end
 
   # GET /exams/1/edit
@@ -69,6 +71,6 @@ class ExamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exam_params
-      params.require(:exam).permit(:lecture_id, :user_id, :year, :season, :image, :image_cache, :remove_image)
+      params.require(:exam).permit(:name, :lecture_id, :user_id, :year, :season, :image, :image_cache, :remove_image)
     end
 end

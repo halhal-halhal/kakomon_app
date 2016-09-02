@@ -23,6 +23,7 @@ class LecturesController < ApplicationController
   # GET /lectures/1
   # GET /lectures/1.json
   def show
+    @exams = Exam.where(lecture_id: @lecture)
   end
 
   # GET /lectures/new

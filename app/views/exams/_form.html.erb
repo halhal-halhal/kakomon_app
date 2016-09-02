@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
   <div class="field">
     <%= f.label :lecture_id %><br>
     <%= f.number_field :lecture_id %>
@@ -24,9 +27,14 @@
     <%= f.number_field :year %>
   </div>
   <div class="field">
-    <%= f.label :season %><br>
-    <%= f.number_field :season %>
+
+    <select id="season" name="exam[season]">
+    <option value="0" selected>中間</option>
+    <option value="1">期末</option>
+    <option value="2">その他（小テスト等）</option>
+    </select>
   </div>
+
   <!-- 追加箇所 開始 -->
   <div class="field">
     <% if @exam.image? %>
