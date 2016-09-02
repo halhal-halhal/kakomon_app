@@ -14,18 +14,32 @@
     <%= f.label :"メールアドレス(埼玉大学のもの限定)" %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
-
+<!--
   <div class="field">
-    <%= f.label :gakubu %><br>
-    <%= f.text_field :gakubu %>
+    <div class="field">
+      <label for="gakubu">学部</label><br>
+      <select id="gakubu" name="user[gakubu]">
+        <option value="1" selected>教養</option>
+        <option value="2">経済</option>
+        <option value="3">教育</option>
+        <option value="4">理</option>
+        <option value="5">工</option>
+      </select>
+    </div>
+
+  --↑か↓使う-
+
+  <%= f.label :学部%><br>
+  <%= f.collection_select(:gakubu, GakubuList.all, :id, :name)%>
   </div>
+-->
 
-  <div class="field">
-    <%= f.label :gakka %><br>
-    <%= f.text_field :gakka %>
-  </div>
+<div class="field">
+  <%= f.label :入学年度 %><br>
+  <%= f.number_field :year %>
+</div>
 
-  <div class="field">
+<div class="field">
     <%= f.label :"パスワード" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
