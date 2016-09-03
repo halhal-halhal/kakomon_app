@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @exams = Exam.where(user_id: @user)
+    @exams = Exam.all if @exams == Exam
   end
 
   # GET /users/new

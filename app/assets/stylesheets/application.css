@@ -13,10 +13,16 @@
  *= require_tree .
  *= require_self
  */
-
 body{
   padding: 1% 8%;
 }
+
 .secondpulldown {
       display: none;
    }
+
+.back{
+  background-image: url(/assets/Back.jpg);
+  background-size: cover;
+
+}

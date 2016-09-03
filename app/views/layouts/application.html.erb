@@ -40,7 +40,7 @@
       <a class="navbar-text" href="/lectures">講義検索</a>
       <a class="navbar-text" href="/teachers">教員検索</a>
       <% if current_user%>
-      <div Align="right"><button type="button" class="btn btn-link"><%= link_to "ログアウト", destroy_user_session_path, :method => :delete %></button></div>
+      <div Align="right"><%= link_to "ログイン中： "+current_user.name+"さん", current_user %><button type="button" class="btn btn-link"><%= link_to "ログアウト", destroy_user_session_path, :method => :delete %></button></div>
       <% else %>
       <div Align="right"><button type="button" class="btn btn-link"><%= link_to "新規登録", new_user_registration_url %></button>
       <button type="button" class="btn btn-link"><%= link_to "ログイン", new_user_session_url %></button></div>
